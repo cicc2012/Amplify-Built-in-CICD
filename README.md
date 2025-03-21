@@ -1,5 +1,10 @@
 # Demo for Amplify Built-in CICD
 
+<div style="color: red; font-size: 20px; font-weight: bold; border: 2px solid red; padding: 10px; background-color: #ffe6e6;">
+⚠️ WARNING: ***** DO NOT TRY THIS DEMO *****
+Ensure that sensitive information like OAuth tokens is never hardcoded in your source code. Always use secure storage solutions like AWS Secrets Manager. 
+</div>
+
 When dealing with OAuth tokens, especially when integrating with third-party services such as **GitHub**, **best practices** require you to securely handle and store sensitive information like the **OAuth token**. In the context of creating an AWS Amplify App via **AWS CDK**, the **OAuth token** should not be hard-coded in your source code, as this can lead to security risks such as exposing secrets.
 
 Instead, the recommended approach is to store the OAuth token securely and reference it from a secure location like **AWS Secrets Manager**. This ensures that the token is not exposed in the code and is only accessible by authorized services.
@@ -236,8 +241,6 @@ To deploy the updated stack with the GitHub OAuth token stored securely in Secre
 cdk bootstrap
 ```
 
-Once this is done, you don't need to do it again in other project.
-
 2. **Deploy the CDK stack**:
 
 ```bash
@@ -251,6 +254,3 @@ This will:
 
 ---
 
-### Conclusion
-
-By following these best practices, you can securely store and access your **GitHub OAuth token** in **AWS Secrets Manager**, preventing the need to hardcode sensitive tokens in your code. AWS CDK enables you to programmatically set up the **Amplify App**, securely inject the OAuth token, and create the CI/CD pipeline with GitHub integration. This approach ensures that your application is both secure and maintainable.
